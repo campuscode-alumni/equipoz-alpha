@@ -6,24 +6,24 @@ feature 'User creates Contract' do
 
       visit new_contract_path
 
-      fill_in 'Cliente', with  contract.name
-      fill_in 'Endereço de Entrega', with contract.delivery_address
-      fill_in 'Prazo de Locação', with contract.rental_period
-      fill_in 'Valor Total', with contract.total_amount
-      fill_in 'Desconto', with contract.discount
-      fill_in 'Equipment', with 'Equipamento 01'
-      fill_in 'Resonsável' with contract.contact
+      fill_in 'Cliente', with:  contract.customer
+      fill_in 'Endereço de Entrega', with: contract.delivery_address
+      fill_in 'Prazo de Locação', with: contract.rental_period
+      fill_in 'Valor Total', with: contract.total_amount
+      fill_in 'Desconto', with: contract.discount
+      fill_in 'Equipment', with: contract.equipment
+      fill_in 'Responsável', with: contract.contact
 
       click_on 'Emitir Contrato'
 
-      expect(page).to have_content contract.name
+      expect(page).to have_content contract.customer
       expect(page).to have_content contract.delivery_address
       expect(page).to have_content contract.rental_period
       expect(page).to have_content contract.total_amount
       expect(page).to have_content contract.discount
       expect(page).to have_content contract.equipment
       expect(page).to have_content contract.contact
-      expect(page).to have_content contract.amount
+      # expect(page).to have_content contract.amount
 
 
 
