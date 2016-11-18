@@ -2,16 +2,29 @@ require 'rails_helper'
 
 feature 'User creates Contract' do
   scenario 'successfully' do
+
+    equipment = Equipment.new(serial_number: '123456789',
+                                 description: 'Furadeira Bosch preta',
+                                 category: 'Furadeira 500w',
+                                 replacement_value: '500',
+                                 acquisition_date: '01/01/2010',
+                                 usage_limit: '8')
+
+    equipment.save
+
+
+    full_description = "#{equipment.serial_number} #{equipment.description}"
+
     contract = build(:contract)
 
-      visit new_contract_path
+    visit new_contract_path
 
       fill_in 'Cliente', with:  contract.customer
       fill_in 'Endereço de Entrega', with: contract.delivery_address
       fill_in 'Prazo de Locação', with: contract.rental_period
       fill_in 'Valor Total', with: contract.total_amount
       fill_in 'Desconto', with: contract.discount
-      fill_in 'Equipment', with: contract.equipment
+      select full_description, from: 'Equipment'
       fill_in 'Responsável', with: contract.contact
 
       click_on 'Emitir Contrato'
@@ -21,11 +34,8 @@ feature 'User creates Contract' do
       expect(page).to have_content contract.rental_period
       expect(page).to have_content contract.total_amount
       expect(page).to have_content contract.discount
-      expect(page).to have_content contract.equipment
+      expect(page).to have_content full_description
       expect(page).to have_content contract.contact
       # expect(page).to have_content contract.amount
-
-
-
   end
 end

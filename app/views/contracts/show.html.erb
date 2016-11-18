@@ -5,5 +5,7 @@ Endereço de Entrega:  <%= @contract.delivery_address %>
 Prazo de Locação:  <%= @contract.rental_period %>
 Valor Total:  <%= @contract.total_amount %>
 Desconto:  <%= @contract.discount %>
-Equipamento:  <%= @contract.equipment %>
+Equipamento:  <% @contract.equipment.each do |equipment| %>
+  <%= equipment.full_description %>
+  <% end %>
 Responsável:  <%= @contract.contact %>
