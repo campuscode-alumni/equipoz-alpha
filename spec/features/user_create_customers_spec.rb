@@ -37,4 +37,24 @@ require 'rails_helper'
       expect(page).to have_content(customer.email)
       expect(page).to have_content(customer.adress)
     end
+
+    scenario 'unsucessfully' do
+
+      visit new_customer_path
+
+      fill_in 'Nome', with: ''
+      fill_in 'Tipo', with: ''
+      fill_in 'CPF/CNPJ', with: ''
+      fill_in 'Inscrição Estadual', with: ''
+      fill_in 'Razão Social', with: ''
+      fill_in 'Contato Cobrança', with: ''
+      fill_in 'Telefone', with: ''
+      fill_in 'Email', with: ''
+      fill_in 'Endereço', with: ''
+
+      click_on 'Criar Cliente'
+
+      expect(page).to have_content 'Todos os campos devem ser preenchidos.'
+
+    end
   end
