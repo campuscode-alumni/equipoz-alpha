@@ -5,8 +5,12 @@ class EquipmentController < ApplicationController
 
   def create
     @equipment = Equipment.create(params_equipment)
-    @equipment.save
-    redirect_to @equipment
+    if @equipment.save
+      redirect_to @equipment
+    else
+      flash[:error] = "Não foi possível cadastrar. Todos os campos devem ser preenchidos"
+      render :new
+    end
   end
 
   def show

@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Equipment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:serial_number) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:category) }
+  it { should validate_presence_of(:replacement_value) }
+  it { should validate_presence_of(:acquisition_date) }
+  it { should validate_presence_of(:usage_limit) }
 end

@@ -22,4 +22,19 @@ feature 'User create equipments' do
       find_link('Voltar').visible?
     end
 
+    scenario 'unsuccessfully' do
+      visit new_equipment_path
+
+      fill_in('Número de série', with: '')
+      fill_in('Descrição', with: '')
+      fill_in('Categoria', with: '')
+      fill_in('Custo de reposição', with: '')
+      fill_in('Data de aquisição', with: '')
+      fill_in('Validade', with: '')
+
+      click_on 'Cadastrar'
+
+      expect(page).to have_content 'Não foi possível cadastrar. Todos os campos devem ser preenchidos'
+    end
+
 end
