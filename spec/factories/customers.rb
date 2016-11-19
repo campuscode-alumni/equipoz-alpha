@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :customer do
-    name "MyString"
-    customer_type "MyString"
-    document "MyString"
-    fiscal_number "MyString"
-    legal_name "MyString"
-    contact_name "MyString"
-    phone_number "MyString"
-    email "MyString"
-    adress "MyString"
+    name 'Coca Cola'
+    customer_type 'Jurídica'
+    document '84654102000110'
+    fiscal_number '00000000374334'
+    legal_name 'Kinyx Tecnologia'
+    contact_name 'Noronha'
+    phone_number '69 34413650'
+    email 'dbs.noronha@gmail.com'
+    adress 'Av. Cuiaba'
   end
 end

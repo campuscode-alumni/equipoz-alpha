@@ -1,5 +1,5 @@
 <%= simple_form_for @contract do |f| %>
-  <%= f.input :customer, label: 'Cliente: ' %>
+  <%= f.association :customer, label: 'Cliente' %>
   <%= f.input :delivery_address, label: 'Endereço de Entrega: ' %>
   <%= f.input :rental_period, label: 'Prazo de Locação: ' %>
   <%= f.input :total_amount, label: 'Valor Total' %>
