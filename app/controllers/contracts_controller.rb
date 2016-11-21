@@ -1,12 +1,11 @@
 class ContractsController < ApplicationController
   def new
     @contract = Contract.new
-    @customers = Customer.all
+    @customer = Customer.all
   end
 
   def create
     @contract = Contract.new(contract_params)
-    @customers = Customer.all
     if @contract.save
       redirect_to @contract
     else

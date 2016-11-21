@@ -20,7 +20,7 @@ feature 'User creates Contract' do
 
     click_on 'Emitir Contrato'
 
-    expect(page).to have_content contract.customer.name
+    expect(page).to have_content customer.name
     expect(page).to have_content contract.delivery_address
     expect(page).to have_content contract.rental_period
     expect(page).to have_content contract.total_amount
