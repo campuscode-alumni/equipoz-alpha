@@ -5,7 +5,6 @@ FactoryGirl.define do
     rental_period "10D"
     total_amount "100"
     discount "10"
-    equipment "betoneira"
     contact "Moacir Otranto"
   end
 end

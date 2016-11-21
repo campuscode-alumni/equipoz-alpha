@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20161121221014) do
     t.string   "rental_period"
     t.string   "total_amount"
     t.string   "discount"
-    t.string   "equipment"
     t.string   "contact"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -48,6 +47,8 @@ ActiveRecord::Schema.define(version: 20161121221014) do
     t.integer  "usage_limit"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "contract_id"
+    t.index ["contract_id"], name: "index_equipment_on_contract_id"
   end
 
 end

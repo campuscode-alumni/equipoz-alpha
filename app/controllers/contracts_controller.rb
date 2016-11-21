@@ -2,6 +2,7 @@ class ContractsController < ApplicationController
   def new
     @contract = Contract.new
     @customer = Customer.all
+    @equipment = Equipment.all
   end
 
   def create
@@ -22,6 +23,7 @@ private
   def contract_params
     contract_param = params.require(:contract)
       .permit(:customer_id, :delivery_address, :rental_period, :total_amount,
-              :discount, :equipment, :contact)
+              :discount, { equipment_ids: [] }, :contact)
+
   end
 end
