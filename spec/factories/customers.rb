@@ -8,6 +8,6 @@ FactoryGirl.define do
     contact_name 'Noronha'
     phone_number '69 34413650'
     email 'dbs.noronha@gmail.com'
-    adress 'Av. Cuiaba'
+    address 'Av. Cuiaba'
   end
 end

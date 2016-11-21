@@ -10,7 +10,7 @@ require 'rails_helper'
                               contact_name: 'Noronha',
                               phone_number: '69 34413650',
                               email: 'dbs.noronha@gmail.com',
-                              adress: 'Av. Cuiaba'
+                              address: 'Av. Cuiaba'
       )
 
       visit new_customer_path
@@ -23,7 +23,7 @@ require 'rails_helper'
       fill_in 'Contato Cobrança', with: customer.contact_name
       fill_in 'Telefone', with: customer.phone_number
       fill_in 'Email', with: customer.email
-      fill_in 'Endereço', with: customer.adress
+      fill_in 'Endereço', with: customer.address
 
       click_on 'Criar Cliente'
 
@@ -35,7 +35,7 @@ require 'rails_helper'
       expect(page).to have_content(customer.contact_name)
       expect(page).to have_content(customer.phone_number)
       expect(page).to have_content(customer.email)
-      expect(page).to have_content(customer.adress)
+      expect(page).to have_content(customer.address)
     end
 
     scenario 'unsucessfully' do

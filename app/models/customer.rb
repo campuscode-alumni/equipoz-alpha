@@ -9,6 +9,6 @@ has_many :contracts
             :contact_name,
             :phone_number,
             :email,
-            :adress,
+            :address,
             presence: true
 end
