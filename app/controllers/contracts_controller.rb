@@ -19,6 +19,10 @@ class ContractsController < ApplicationController
     @contract = Contract.find(id)
   end
 
+  def index
+    @contracts = Contract.all
+  end
+
 private
   def contract_params
     contract_param = params.require(:contract)
