@@ -19,9 +19,7 @@ class ContractsController < ApplicationController
     @contract = Contract.find(id)
   end
 
-  def search
-    @customers = Customer.all
-    @equipment = Equipment.all
+  def index
     @contracts = Contract.all
   end
 
