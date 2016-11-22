@@ -10,6 +10,7 @@ class ContractsController < ApplicationController
     if @contract.save
       redirect_to @contract
     else
+      flash.now[:error] = 'Não foi possível emitir o contrato'
       render :new
     end
   end
