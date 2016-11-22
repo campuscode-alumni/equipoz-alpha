@@ -4,7 +4,7 @@
   <%= f.input :rental_period, label: 'Prazo de Locação: ' %>
   <%= f.input :total_amount, label: 'Valor Total' %>
   <%= f.input :discount, label: 'Desconto: ' %>
-  <%= f.association :equipment, as: :check_boxes, label_method: :full_description, collection: Equipment.all %>
+  <%= f.association :equipment, as: :check_boxes, label_method: :full_description, collection: Equipment.all, label: 'Equipamentos: ' %>
   <%= f.input :contact, label: 'Responsável: ' %>
   <%= f.submit 'Emitir Contrato' %>
 <% end %>
