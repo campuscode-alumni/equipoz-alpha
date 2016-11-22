@@ -1,0 +1,8 @@
+<%= simple_form_for search_contracts_path do |f| %>
+  <%= f.button :submit, 'Buscar Contratos' %>
+<% end %>
+
+
+<% @contracts.each do |contract|  %>
+  <%= contract.customer.name %>
+<% end %>

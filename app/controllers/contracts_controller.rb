@@ -19,6 +19,12 @@ class ContractsController < ApplicationController
     @contract = Contract.find(id)
   end
 
+  def search
+    @customers = Customer.all
+    @equipment = Equipment.all
+    @contracts = Contract.all
+  end
+
 private
   def contract_params
     contract_param = params.require(:contract)
