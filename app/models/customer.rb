@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-has_many :contracts
+has_many :contract
 
   validates :name,
             :customer_type,

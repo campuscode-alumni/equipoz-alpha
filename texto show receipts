@@ -1,0 +1,17 @@
+<!--
+<h1>Recibo de Entrega</h1>
+<p>
+  Eu, <%= contract.contact %>, em nome da empresa
+  <%= customer.legal_name %>, inscrita no CNPJ
+  <%= customer.document %> declaro ter recebido
+  os equipamentos
+  <% @contract.equipment.each do |equipment| %>
+    <%= equipment.full_description %>
+  <% end %> %> pelo período de …….. em perfeitas
+  condições de uso no endereço ……………………………….. (endereço de entrega) no dia
+  ……………………….. (data da emissão) de acordo com o contrato ………. (numero do
+  contrato).
+  _____________________________
+  Assinatura do Responsável
+
+</p> -->

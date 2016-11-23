@@ -1,12 +1,17 @@
 <h1>Contrato</h1>
-
-Cliente: <%= @contract.customer.name %>
-Endereço de Entrega:  <%= @contract.delivery_address %>
-Prazo de Locação:  <%= @contract.rental_period %>
-Valor Total:  <%= @contract.total_amount %>
-Desconto:  <%= @contract.discount %>
-Equipamento:  <% @contract.equipment.each do |equipment| %>
-  <%= equipment.full_description %>
+<p>Número de Contrato: <%= @contract.number %></p>
+<p>Cliente:<%= @contract.customer.name %></p>
+<p>Endereço de Entrega:<%= @contract.delivery_address %></p>
+<p>Prazo de Locação:<%= @contract.rental_period %></p>
+<p>Valor Total:<%= @contract.total_amount %>/p>
+<p>Desconto:<%= @contract.discount %></p>
+<p>Equipamento:
+  <% @contract.equipment.each do |equipment| %>
+    <%= equipment.full_description %>
   <% end %>
-Responsável:  <%= @contract.contact %>
+
+<p>Responsável:<%= @contract.contact %></p>
 Total: <%= @contract.total_contract %>
+
+<%= link_to 'Emitir Recibo', delivery_receipt_contract_path %>
+<%= link_to 'Visualizar Recibo', delivery_receipt_contract_path %>

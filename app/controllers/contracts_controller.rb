@@ -16,8 +16,7 @@ class ContractsController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @contract = Contract.find(id)
+    @contract = Contract.find(params[:id])
   end
 
   def index
@@ -28,7 +27,7 @@ private
   def contract_params
     contract_param = params.require(:contract)
       .permit(:customer_id, :delivery_address, :rental_period, :total_amount,
-              :discount, { equipment_ids: [] }, :contact)
+              :discount, { equipment_ids: [] }, :contact, :number)
 
   end
 end

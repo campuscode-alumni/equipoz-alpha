@@ -6,5 +6,6 @@ FactoryGirl.define do
     total_amount 100
     discount 10
     contact "Moacir Otranto"
+    number "123456789"
   end
 end
