@@ -57,4 +57,15 @@ ActiveRecord::Schema.define(version: 20161122230200) do
     t.index ["contract_id"], name: "index_equipment_on_contract_id"
   end
 
+  create_table "rented_equipments", force: :cascade do |t|
+    t.integer  "contract_id"
+    t.integer  "equipment_id"
+    t.date     "delivery_date"
+    t.date     "return_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["contract_id"], name: "index_rented_equipments_on_contract_id"
+    t.index ["equipment_id"], name: "index_rented_equipments_on_equipment_id"
+  end
+
 end

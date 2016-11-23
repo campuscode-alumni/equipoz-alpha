@@ -10,12 +10,17 @@ class ContractsController < ApplicationController
     if @contract.save
       redirect_to @contract
     else
+      flash.now[:error] = 'Não foi possível emitir o contrato'
       render :new
     end
   end
 
   def show
     @contract = Contract.find(params[:id])
+  end
+
+  def index
+    @contracts = Contract.all
   end
 
 private
