@@ -32,7 +32,7 @@ feature 'User creates Contract' do
     expect(page).to have_content full_description_1
     expect(page).to have_content full_description_2
     expect(page).to have_content contract.contact
-    # expect(page).to have_content contract.amount
+    expect(page).to have_content contract.total_contract
   end
 
   scenario 'no equipment' do
@@ -58,4 +58,9 @@ feature 'User creates Contract' do
 
     expect(page).to have_content('Não foi possível emitir o contrato')
   end
+
+  scenario 'successfully' do
+
+  end
+
 end
