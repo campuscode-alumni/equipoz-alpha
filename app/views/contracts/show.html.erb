@@ -11,5 +11,5 @@
   <% end %>
 </p>
 <p>Responsável:<%= @contract.contact %></p>
-<%= link_to 'Emitir Recibo', delivery_receipt_contract_path %>
-<%= link_to 'Visualizar Recibo', delivery_receipt_contract_path %>
+<%= link_to 'Recibo de Entrega', delivery_receipt_contract_path %>
+<%= link_to 'Recibo de Devolução', new_contract_delivery_return_path %>

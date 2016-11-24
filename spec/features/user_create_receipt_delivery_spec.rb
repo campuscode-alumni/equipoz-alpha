@@ -15,7 +15,7 @@ feature 'Users issue receipt delivery' do
     #teste
     visit contract_path(contract)
 
-    click_on 'Emitir Recibo'
+    click_on 'Recibo de Entrega'
 
     #expectativas
     expect(page).to have_css('h1', text: 'Recibo de Entrega')
@@ -40,7 +40,7 @@ feature 'Users issue receipt delivery' do
 
       visit contract_path(contract)
 
-      click_on 'Visualizar Recibo'
+      click_on 'Recibo de Entrega'
 
       expect(page).to have_css('h1', text: 'Recibo de Entrega')
   end
