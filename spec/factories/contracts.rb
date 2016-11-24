@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :contract do
-    # customer
+    customer
     delivery_address "Rua Funchal"
     rental_period "10D"
     total_amount 100
