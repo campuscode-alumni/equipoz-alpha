@@ -40,7 +40,7 @@ feature 'Users issue receipt delivery' do
 
       visit contract_path(contract)
 
-      click_on 'Visualizar Recibo'
+      click_on 'Visualizar Recibo Entrega'
 
       expect(page).to have_css('h1', text: 'Recibo de Entrega')
   end
