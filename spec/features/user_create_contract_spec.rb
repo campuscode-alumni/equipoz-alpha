@@ -2,14 +2,17 @@ require 'rails_helper'
 
 feature 'User creates Contract' do
   scenario 'successfully' do
-
     customer = create(:customer, name: 'Campus')
     equipment = create(:equipment, description: 'Furadeira Bosch vermelha')
-    another_equipment = create(:equipment, serial_number:'CHK1245', description: 'Betoneira CSM')
+    another_equipment = create(:equipment,
+                               serial_number: 'CHK1245',
+                               description: 'Betoneira CSM')
     contract = build(:contract)
 
-    full_description_1 = "#{equipment.serial_number} #{equipment.description}"
-    full_description_2 = "#{equipment.serial_number} #{equipment.description}"
+    equipment_description = "#{equipment.serial_number} \
+#{equipment.description}"
+    another_equipment_description = "#{another_equipment.serial_number} \
+#{another_equipment.description}"
 
     visit new_contract_path
 
@@ -18,8 +21,8 @@ feature 'User creates Contract' do
     fill_in 'Prazo de Locação', with: contract.rental_period
     fill_in 'Valor Total', with: contract.total_amount
     fill_in 'Desconto', with: contract.discount
-    check(full_description_1)
-    check(full_description_2)
+    check(equipment_description)
+    check(another_equipment_description)
     fill_in 'Responsável', with: contract.contact
 
     click_on 'Emitir Contrato'
@@ -29,21 +32,15 @@ feature 'User creates Contract' do
     expect(page).to have_content contract.rental_period
     expect(page).to have_content contract.total_amount
     expect(page).to have_content contract.discount
-    expect(page).to have_content full_description_1
-    expect(page).to have_content full_description_2
+    expect(page).to have_content equipment_description
+    expect(page).to have_content another_equipment_description
     expect(page).to have_content contract.contact
     expect(page).to have_content contract.total_contract
   end
 
   scenario 'no equipment' do
-
     customer = create(:customer, name: 'Campus')
-    equipment = create(:equipment, description: 'Furadeira Bosch vermelha')
-    another_equipment = create(:equipment, serial_number:'CHK1245', description: 'Betoneira CSM')
     contract = build(:contract)
-
-    full_description_1 = "#{equipment.serial_number} #{equipment.description}"
-    full_description_2 = "#{equipment.serial_number} #{equipment.description}"
 
     visit new_contract_path
 
@@ -58,9 +55,4 @@ feature 'User creates Contract' do
 
     expect(page).to have_content('Não foi possível emitir o contrato')
   end
-
-  scenario 'successfully' do
-
-  end
-
 end

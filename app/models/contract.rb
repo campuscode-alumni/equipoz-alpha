@@ -8,5 +8,4 @@ class Contract < ApplicationRecord
   def total_contract
     total_amount - discount
   end
-
 end
