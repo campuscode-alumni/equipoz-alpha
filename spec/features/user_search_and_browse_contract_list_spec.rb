@@ -2,11 +2,9 @@ require 'rails_helper'
 
 feature 'user list all contract on inital page' do
   scenario 'list all contracts' do
-
     customer = create(:customer)
     equipment = create(:equipment)
     contract = create(:contract, customer: customer, equipment: [equipment])
-
 
     visit root_path
 

@@ -1,5 +1,4 @@
 class CustomersController < ApplicationController
-
   def new
     @customer = Customer.new
   end
@@ -9,7 +8,7 @@ class CustomersController < ApplicationController
     if @customer.save
       redirect_to @customer
     else
-      flash[:error] = "Todos os campos devem ser preenchidos."
+      flash[:error] = 'Todos os campos devem ser preenchidos.'
       render :new
     end
   end
@@ -19,6 +18,7 @@ class CustomersController < ApplicationController
   end
 
   private
+
   def customer_params
     params.require(:customer)
           .permit(:name, :customer_type, :document, :fiscal_number,
