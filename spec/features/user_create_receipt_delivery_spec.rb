@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'Users issue receipt delivery' do
   scenario 'on created contract' do
-
     customer = create(:customer)
     equipment = create(:equipment)
     another_equipment = create(:equipment, serial_number: '987654')
