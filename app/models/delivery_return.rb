@@ -1,5 +1,5 @@
 class DeliveryReturn < ApplicationRecord
-	belongs_to :contract
+  belongs_to :contract
 
-	validates :name, :document, presence: true
+  validates :name, :document, presence: true
 end
