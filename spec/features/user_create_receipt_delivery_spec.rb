@@ -10,9 +10,9 @@ feature 'Users issue receipt delivery' do
                                  equipment: [equipment, another_equipment])
 
     equipment_description = "#{equipment.serial_number} \
-#{equipment.description}"
+#{equipment.name}"
     another_equipment_description = "#{another_equipment.serial_number} \
-#{another_equipment.description}"
+#{another_equipment.name}"
 
     # teste
     visit contract_path(contract)

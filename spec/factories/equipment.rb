@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :equipment do
-    description 'Furadeira Bosch preta'
+    name 'Furadeira Bosch preta'
     category 'Furadeira 500w'
     serial_number '123456789'
     acquisition_date '2016-11-17'

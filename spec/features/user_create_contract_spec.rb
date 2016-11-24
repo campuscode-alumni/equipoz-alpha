@@ -3,16 +3,16 @@ require 'rails_helper'
 feature 'User creates Contract' do
   scenario 'successfully' do
     customer = create(:customer, name: 'Campus')
-    equipment = create(:equipment, description: 'Furadeira Bosch vermelha')
+    equipment = create(:equipment, name: 'Furadeira Bosch vermelha')
     another_equipment = create(:equipment,
                                serial_number: 'CHK1245',
-                               description: 'Betoneira CSM')
+                               name: 'Betoneira CSM')
     contract = build(:contract)
 
     equipment_description = "#{equipment.serial_number} \
-#{equipment.description}"
+#{equipment.name}"
     another_equipment_description = "#{another_equipment.serial_number} \
-#{another_equipment.description}"
+#{another_equipment.name}"
 
     visit new_contract_path
 
