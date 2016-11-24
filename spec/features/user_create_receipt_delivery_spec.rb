@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Users issue receipt delivery' do
   scenario 'on created contract' do
-    # setup
+
     customer = create(:customer)
     equipment = create(:equipment)
     another_equipment = create(:equipment, serial_number: '987654')
@@ -14,12 +14,10 @@ feature 'Users issue receipt delivery' do
     another_equipment_description = "#{another_equipment.serial_number} \
 #{another_equipment.description}"
 
-    # teste
     visit contract_path(contract)
 
     click_on 'Recibo Entrega'
 
-    # expectativas
     expect(page).to have_css('h1', text: 'Recibo de Entrega')
     expect(page).to have_content contract.contact
     expect(page).to have_content customer.legal_name
@@ -41,7 +39,7 @@ feature 'Users issue receipt delivery' do
 
     visit contract_path(contract)
 
-    click_on 'Visualizar Recibo'
+    click_on 'Visualizar Recibo Entrega'
 
     expect(page).to have_css('h1', text: 'Recibo de Entrega')
   end
