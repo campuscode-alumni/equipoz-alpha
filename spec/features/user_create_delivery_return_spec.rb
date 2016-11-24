@@ -16,24 +16,22 @@ feature 'user issues delivery returns' do
 
 		click_on 'Recibo Entrega'
 
-		# verificar se foi persistido no banco
-
 		visit contract_path(contract)
 
 		click_on 'Recibo Devolução'
 
-		fill_in 'Nome', with: 'Noronha'
-		fill_in 'CPF', with: '840.087.092-15'
+		fill_in 'Nome', with: delivery_return.name
+		fill_in 'CPF', with: delivery_return.document
 
 		click_on 'Emitir'
 
-		expect(page). to have_content delivery_return.name
-		expect(page). to have_content equipment.full_description
-		expect(page). to have_content equipment.another_equipment
-		expect(page). to have_content equipment.full_description
-		expect(page). to have_content contract.number
-		expect(page). to have_content contract.legal_number
-		expect(page). to have_content customer.document
-		expect(page). to have_content delivery_return.created_at
+		expect(page).to have_content delivery_return.name
+		expect(page).to have_content equipment.full_description
+		expect(page).to have_content another_equipment.full_description
+		expect(page).to have_content contract.number
+		expect(page).to have_content customer.legal_name
+		expect(page).to have_content customer.document
+		expect(page).to have_content delivery_return.created_at
+		expect(page).to have_content contract.delivery_return.document
 	end
 end
