@@ -18,3 +18,7 @@ notifications:
       - antelio@gmail.com
     on_success: always
     on_failure: always
+deploy:
+  provider: heroku
+  api_key:
+    on: production
