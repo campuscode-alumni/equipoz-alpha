@@ -1,5 +1,4 @@
 class Equipment < ApplicationRecord
-
   has_many :rented_equipment
   has_many :contract, through: :rented_equipment
 
@@ -13,5 +12,4 @@ class Equipment < ApplicationRecord
   def full_description
     "#{serial_number} #{description}"
   end
-
 end

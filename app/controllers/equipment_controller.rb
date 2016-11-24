@@ -8,7 +8,8 @@ class EquipmentController < ApplicationController
     if @equipment.save
       redirect_to @equipment
     else
-      flash[:error] = "Não foi possível cadastrar. Todos os campos devem ser preenchidos"
+      flash[:error] = 'Não foi possível cadastrar. \
+Todos os campos devem ser preenchidos'
       render :new
     end
   end
@@ -20,6 +21,9 @@ class EquipmentController < ApplicationController
   private
 
   def params_equipment
-    params.require(:equipment).permit(:description, :category, :serial_number, :acquisition_date, :replacement_value, :usage_limit)
+    params.require(:equipment)
+          .permit(:description, :category, :serial_number,
+                  :acquisition_date, :replacement_value,
+                  :usage_limit)
   end
 end
