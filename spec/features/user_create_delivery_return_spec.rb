@@ -61,8 +61,5 @@ feature 'user issues delivery returns' do
 		click_on 'Emitir'
 
 		expect(page).to have_content "Não foi possivel emitir Recibo Devolução"
-
-
 	end
-
 end
