@@ -22,3 +22,4 @@ deploy:
   provider: heroku
   api_key: 2f08bf1f-308b-4a82-b696-42327410d10e
     on: production
+  run: "rails db:migrate"
