@@ -7,13 +7,13 @@ class Contract < ApplicationRecord
 
   # validates_associated :equipment
   validates :customer,
-  					#:equipment,
-  					:delivery_address,
-  					:rental_period,
-  					:contact,
-  					:equipment,
-  					:rental_period,
-  					presence: true
+            #:equipment,
+            :delivery_address,
+            :rental_period,
+            :contact,
+            :equipment,
+            :rental_period,
+            presence: true
 
   def total_contract
     total_amount - discount
