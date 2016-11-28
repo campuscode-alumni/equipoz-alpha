@@ -24,7 +24,7 @@ feature 'user list all contract on inital page' do
     contract1 = create(:contract, customer: customer1, equipment: [equipment1])
 
     customer2 = create(:customer, name: 'Cliente 2')
-    equipment2 = create(:equipment, description: 'descriçao 2')
+    equipment2 = create(:equipment, name: 'descriçao 2')
     contract2 = create(:contract, customer: customer2, equipment: [equipment2])
 
     visit root_path

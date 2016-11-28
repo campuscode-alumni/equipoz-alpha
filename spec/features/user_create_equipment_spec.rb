@@ -4,7 +4,7 @@ feature 'User create equipments' do
     visit new_equipment_path
 
     fill_in('Número de série', with: '123456789')
-    fill_in('Descrição', with: 'Furadeira Bosch preta')
+    fill_in('Nome', with: 'Furadeira Bosch preta')
     fill_in('Categoria', with: 'Furadeira 500w')
     fill_in('Custo de reposição', with: '500')
     fill_in('Data de aquisição', with: '01/01/2010')
@@ -26,7 +26,7 @@ feature 'User create equipments' do
     visit new_equipment_path
 
     fill_in('Número de série', with: '')
-    fill_in('Descrição', with: '')
+    fill_in('Nome', with: '')
     fill_in('Categoria', with: '')
     fill_in('Custo de reposição', with: '')
     fill_in('Data de aquisição', with: '')

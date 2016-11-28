@@ -9,10 +9,7 @@ feature 'user issues delivery returns' do
                       customer: customer,
                       equipment: [equipment, another_equipment])
     delivery_return = build(:delivery_return, contract: contract)
-
-    visit contract_path(contract)
-
-    click_on 'Recibo Entrega'
+    full_description = " #{equipment.serial_number} #{equipment.name}"
 
     visit contract_path(contract)
 
