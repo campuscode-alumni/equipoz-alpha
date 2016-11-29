@@ -22,7 +22,7 @@ Todos os campos devem ser preenchidos'
 
   def params_equipment
     params.require(:equipment)
-          .permit(:description, :category, :serial_number,
+          .permit(:name, :category, :serial_number,
                   :acquisition_date, :replacement_value,
                   :usage_limit)
   end
