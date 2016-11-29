@@ -5,7 +5,11 @@ feature 'User create costumers' do
     customer = create(:customer)
 
     visit root_path
-    
+
+    click_on 'Clientes'
+
+    click_on 'Novo Cliente'
+
     fill_in 'Nome', with: customer.name
     select 'Jurídica', from: 'Tipo'
     fill_in 'CPF/CNPJ', with: customer.document
