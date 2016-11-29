@@ -3,7 +3,6 @@
   <h1><%= contract.customer.name %></h1>
   <%= contract.delivery_address %>
   <%= contract.total_amount %>
-
     <% if contract.equipment.count > 0 %>
     <h2>Equipamentos</h2>
       <% contract.equipment.each do |eqp| %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'contracts#index'
+  root 'home#index'
   resources :equipment, only: [:new, :create, :show]
   resources :customers, only: [:new, :create, :show]
   resources :contracts, only:[:new, :create, :show, :index] do
