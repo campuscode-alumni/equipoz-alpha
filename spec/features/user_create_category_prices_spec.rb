@@ -1,27 +1,19 @@
 require 'rails_helper'
 
-feature 'user create category' do
+feature 'user create price per category' do
   scenario 'successfully' do
-    visit new_category_path
+    category = create(:category, name: 'Betoneira')
 
-    fill_in('Nome', with: 'Furadeira 500w')
-
-    click_on 'Cadastrar'
-
-    expect(page).to have_content('Furadeira 500w')
-
-    find_link('Voltar').visible?
-  end
-
-
-  scenario 'unsuccessfully' do
-    visit new_category_path
-
-    fill_in('Nome', with: '')
+    visit new_category_price_path
+    select(category.name, :from => 'Categorias')
+    select("15", :from => 'Prazo')
+    fill_in('Preço', with: '10.00')
 
     click_on 'Cadastrar'
 
-    expect(page).to have_content('Não foi possível cadastrar!')
+    expect(page).to have_content(category.name)
+    expect(page).to have_content('15')
+    expect(page).to have_content('10.00')
 
     find_link('Voltar').visible?
   end
