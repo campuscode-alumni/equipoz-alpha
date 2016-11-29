@@ -2,4 +2,5 @@
   <%= f.input :category_id, collection: @categories, label: 'Categorias' %>
   <%= f.input :rental_period, collection: [1,3,5,7,15,20,30], label: 'Prazo' %>
   <%= f.input :price, label: 'Preço' %>
+  <%= f.submit 'Cadastrar' %>
 <% end %>
