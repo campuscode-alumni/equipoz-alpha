@@ -12,7 +12,6 @@
 
 <p>Responsável:<%= @contract.contact %></p>
 Total: <%= @contract.total_contract %>
-
 <%= link_to 'Recibo Entrega', delivery_receipt_contract_path %>
 <%= link_to 'Visualizar Recibo Entrega', delivery_receipt_contract_path %>
 <%= link_to 'Recibo Devolução', new_contract_delivery_return_path(@contract) %>

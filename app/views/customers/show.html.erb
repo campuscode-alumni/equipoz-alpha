@@ -1,4 +1,3 @@
-<section>
   <p>Nome: <%= @customer.name %></p>
   <p>Tipo: <%= @customer.customer_type%></p>
   <p>CPF/CNPJ: <%= @customer.document %></p>
@@ -8,5 +7,4 @@
   <p>Telefone: <%= @customer.phone_number %></p>
   <p>Email: <%= @customer.email %></p>
   <p>Endereço: <%= @customer.address %></p>
-</section>
-<%= link_to 'Voltar', new_customer_path %>
+<%= link_to 'Voltar', customers_path, class: "btn btn-default" %>

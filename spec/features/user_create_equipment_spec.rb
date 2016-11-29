@@ -1,7 +1,9 @@
 require 'rails_helper'
 feature 'User create equipments' do
   scenario 'successfully' do
-    visit new_equipment_path
+    visit root_path
+
+    click_on 'Novo Equipamento'
 
     fill_in('Número de série', with: '123456789')
     fill_in('Nome', with: 'Furadeira Bosch preta')

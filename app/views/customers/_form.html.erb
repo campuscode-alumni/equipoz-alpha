@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Cadastrar Cliente</div>
+    <div class="panel-body">
+      <%= simple_form_for @customer do |f| %>
+        <%= f.input :name, label: 'Nome', placeholder: 'Digite o seu nome' %>
+        <%= f.input :customer_type, label: 'Tipo',
+          collection: ["Jurídica", "Física"],
+          placeholder: 'Escolha o tipo da sua empresa' %>
+        <%= f.input :document, label: 'CPF/CNPJ', placeholder: 'O seu documento fiscal' %>
+        <%= f.input :fiscal_number, label: 'Inscrição Estadual', placeholder: 'A IE da sua empresa' %>
+        <%= f.input :legal_name, label: 'Razão Social', placeholder: 'A razão social da sua empresa'  %>
+        <%= f.input :contact_name, label: 'Contato Cobrança', placeholder: 'Contato da empresa' %>
+        <%= f.input :phone_number, label: 'Telefone', placeholder: 'Qual telefone para contato?' %>
+        <%= f.input :email, label: 'Email', placeholder: 'Qual o seu email?' %>
+        <%= f.input :address, label: 'Endereço', placeholder: 'Endereço para correspondencia' %>
+        <%= f.submit 'Criar Cliente', class: "btn btn-primary" %>
+        <%= link_to 'Voltar', customers_path, class: "btn btn-default" %>
+      <% end %>
+  </div>
+</div>

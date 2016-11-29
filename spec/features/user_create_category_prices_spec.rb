@@ -2,7 +2,9 @@ require 'rails_helper'
 
 feature 'user create category' do
   scenario 'successfully' do
-    visit new_category_path
+    visit root_path
+
+    click_on 'Nova Categoria'
 
     fill_in('Nome', with: 'Furadeira 500w')
 

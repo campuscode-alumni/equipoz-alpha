@@ -1,21 +1,13 @@
 require 'rails_helper'
 
 feature 'User create costumers' do
-  scenario 'sucessfully' do
-    customer = Customer.new(name: 'Kinyx',
-                            customer_type: 'Jurídica',
-                            document: '84654102000110',
-                            fiscal_number: '00000000374334',
-                            legal_name: 'Kinyx Tecnologia',
-                            contact_name: 'Noronha',
-                            phone_number: '69 34413650',
-                            email: 'dbs.noronha@gmail.com',
-                            address: 'Av. Cuiaba')
+  scenario 'type Jurídica' do
+    customer = create(:customer)
 
-    visit new_customer_path
-
+    visit root_path
+    
     fill_in 'Nome', with: customer.name
-    fill_in 'Tipo', with: customer.customer_type
+    select 'Jurídica', from: 'Tipo'
     fill_in 'CPF/CNPJ', with: customer.document
     fill_in 'Inscrição Estadual', with: customer.fiscal_number
     fill_in 'Razão Social', with: customer.legal_name
@@ -36,12 +28,17 @@ feature 'User create costumers' do
     expect(page).to have_content(customer.email)
     expect(page).to have_content(customer.address)
   end
+  scenario 'click voltar new customer' do
+    visit new_customer_path
 
-  scenario 'unsucessfully' do
+    expect(page).to have_link 'Voltar', href: customers_path
+  end
+
+  scenario 'fields blank' do
     visit new_customer_path
 
     fill_in 'Nome', with: ''
-    fill_in 'Tipo', with: ''
+    select 'Jurídica', from: 'Tipo'
     fill_in 'CPF/CNPJ', with: ''
     fill_in 'Inscrição Estadual', with: ''
     fill_in 'Razão Social', with: ''

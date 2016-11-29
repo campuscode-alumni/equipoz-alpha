@@ -14,23 +14,23 @@
 					<th>Telefone</th>
 					<th>Email</th>
 					<th>Endereço</th>
-					<th>...</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<% @customers.each do |customer| %>
-					<th scope="row"><%= customer.id %></th>
-					<td><%= customer.name %></td>
-					<td><%= customer.contact_name %></td>
-					<td><%= customer.phone_number %></td>
-					<td><%= customer.email %></td>
-					<td><%= customer.address %></td>
-					<td>
-						<%= link_to 'Visualizar', customer_path(customer.id) %>
-					</td>
-					<% end %>
-				</tr>
+				<% @customers.each do |customer| %>
+					<tr>
+						<th scope="row"><%= customer.id %></th>
+						<td><%= customer.name %></td>
+						<td><%= customer.contact_name %></td>
+						<td><%= customer.phone_number %></td>
+						<td><%= customer.email %></td>
+						<td><%= customer.address %></td>
+						<td>
+							<%= link_to 'Visualizar', customer_path(customer.id) %>
+						</td>
+					</tr>
+				<% end %>
 		</tbody>
 	</table>
 </div>

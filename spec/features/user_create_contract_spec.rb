@@ -14,7 +14,9 @@ feature 'User creates Contract' do
     another_equipment_description = "#{another_equipment.serial_number} \
 #{another_equipment.name}"
 
-    visit new_contract_path
+    visit root_path
+
+    click_on 'Novo Contrato'
 
     select customer.name, from: 'Cliente'
     fill_in 'Endereço de Entrega', with: contract.delivery_address
