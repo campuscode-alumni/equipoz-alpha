@@ -17,4 +17,17 @@ feature 'user create price per category' do
 
     find_link('Voltar').visible?
   end
+
+  scenario 'unsuccessfully' do
+    category = create(:category, name: 'Betoneira')
+
+    visit new_category_price_path
+    select(category.name, :from => 'Categorias')
+    select("15", :from => 'Prazo')
+    fill_in('Preço', with: '')
+
+    click_on 'Cadastrar'
+
+    expect(page).to have_content('Não foi possível cadastrar preço')
+  end
 end

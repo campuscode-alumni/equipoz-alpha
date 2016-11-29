@@ -7,7 +7,7 @@ class Contract < ApplicationRecord
 
   # validates_associated :equipment
   validates :customer,
-            #:equipment,
+            :equipment,
             :delivery_address,
             :rental_period,
             :contact,

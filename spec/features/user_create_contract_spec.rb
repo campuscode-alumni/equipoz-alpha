@@ -19,7 +19,6 @@ feature 'User creates Contract' do
     select customer.name, from: 'Cliente'
     fill_in 'Endereço de Entrega', with: contract.delivery_address
     fill_in 'Prazo de Locação', with: contract.rental_period
-    fill_in 'Valor Total', with: contract.total_amount
     fill_in 'Desconto', with: contract.discount
     check(equipment_description)
     check(another_equipment_description)

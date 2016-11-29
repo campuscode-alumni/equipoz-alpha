@@ -1,6 +1,7 @@
 class Equipment < ApplicationRecord
   has_many :rented_equipment
   has_many :contract, through: :rented_equipment
+  belongs_to :category
 
   validates :serial_number, presence: true
   validates :name, presence: true

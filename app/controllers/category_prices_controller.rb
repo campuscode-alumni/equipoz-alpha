@@ -5,9 +5,9 @@ class CategoryPricesController < ApplicationController
   end
 
   def create
-    @category_price = CategoryPrice.create(category_prices_param)
-    if @category_price.save
-      redirect_to @category_price
+    @category_prices = CategoryPrice.create(category_prices_param)
+    if @category_prices.save
+      redirect_to @category_prices
     else
       flash.now[:error] = "Não foi possível cadastrar preço"
       render :new
@@ -15,7 +15,7 @@ class CategoryPricesController < ApplicationController
   end
 
   def show
-    @category_price = CategoryPrice.find(params[:id])
+    @category_prices = CategoryPrice.find(params[:id])
   end
 
   private
