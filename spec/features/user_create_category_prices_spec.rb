@@ -2,9 +2,12 @@ require 'rails_helper'
 
 feature 'user create category' do
   scenario 'successfully' do
+
     visit root_path
 
     click_on 'Nova Categoria'
+
+    visit new_category_path
 
     fill_in('Nome', with: 'Furadeira 500w')
 
@@ -14,8 +17,6 @@ feature 'user create category' do
 
     find_link('Voltar').visible?
   end
-
-
   scenario 'unsuccessfully' do
     visit new_category_path
 

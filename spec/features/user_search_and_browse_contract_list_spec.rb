@@ -14,7 +14,7 @@ feature 'user list all contract on inital page' do
   end
   scenario 'no contract list' do
     visit contracts_path
-    
+
     expect(page).to have_content('Não foi possível encontrar nenhum contrato')
   end
 end
