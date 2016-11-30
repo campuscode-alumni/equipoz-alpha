@@ -48,12 +48,8 @@
                   <li><%= link_to 'Listar Categorias', categories_path %></li>
                 </ul>
               </li>
-              <li><a href="#">Tabela de Preço</a></li>
+              <li><%= link_to 'Tabela de Preço', new_category_price_path %></li>
               <li><%= link_to 'Contratos', contracts_path %></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Entrar</a></li>
-              <li><a href="#">Criar Usuário</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -64,5 +60,6 @@
       <%= flash[:error] %>
       <%= yield %>
     </div>
+    <br>
   </body>
 </html>

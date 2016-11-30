@@ -4,10 +4,11 @@ class Contract < ApplicationRecord
   belongs_to :customer
   has_many :rented_equipment
   has_many :equipment, through: :rented_equipment
+  before_save :set_total_amount
 
   # validates_associated :equipment
   validates :customer,
-            #:equipment,
+            :equipment,
             :delivery_address,
             :rental_period,
             :contact,
@@ -15,7 +16,13 @@ class Contract < ApplicationRecord
             :rental_period,
             presence: true
 
-  def total_contract
-    total_amount - discount
+  def set_total_amount
+    self.amount = 0
+    equipment.each do |equipment|
+      current_price = CategoryPrice.where(rental_period: rental_period,
+                                  category: equipment.category).last
+      self.amount += current_price.price if current_price
+    end
+    self.total_amount = amount - discount
   end
 end

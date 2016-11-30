@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124234057) do
+ActiveRecord::Schema.define(version: 20161129233300) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
+  end
+
+  create_table "category_prices", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "rental_period"
+    t.float    "price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["category_id"], name: "index_category_prices_on_category_id"
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -28,6 +37,7 @@ ActiveRecord::Schema.define(version: 20161124234057) do
     t.string   "number"
     t.float    "discount"
     t.float    "total_amount"
+    t.float    "amount"
     t.index ["customer_id"], name: "index_contracts_on_customer_id"
   end
 
@@ -60,7 +70,6 @@ ActiveRecord::Schema.define(version: 20161124234057) do
   end
 
   create_table "equipment", force: :cascade do |t|
-    t.string   "category"
     t.string   "serial_number"
     t.date     "acquisition_date"
     t.decimal  "replacement_value"
@@ -69,6 +78,8 @@ ActiveRecord::Schema.define(version: 20161124234057) do
     t.datetime "updated_at",        null: false
     t.integer  "contract_id"
     t.string   "name"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_equipment_on_category_id"
     t.index ["contract_id"], name: "index_equipment_on_contract_id"
   end
 

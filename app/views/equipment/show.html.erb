@@ -1,6 +1,6 @@
 <%= @equipment.serial_number %>
 <%= @equipment.name %>
-<%= @equipment.category %>
+<%= @equipment.category.name %>
 <%= @equipment.replacement_value %>
 <%  data = @equipment.acquisition_date %>
 <%= data.strftime("%d/%m/%Y") %>
