@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :equipment, only: [:new, :create, :show, :index]
   resources :categories, only: [:new, :create, :show, :index]
   resources :customers, only: [:new, :create, :show, :index]
+  resources :category_prices, only: [:new, :create, :show]
   resources :contracts, only:[:new, :create, :show, :index] do
     resources :delivery_returns, only: [:new, :create]
     member do
