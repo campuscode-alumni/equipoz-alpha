@@ -11,7 +11,7 @@ class EquipmentController < ApplicationController
     if @equipment.save
       redirect_to @equipment
     else
-      flash[:error] = 'Não foi possível cadastrar. \
+      flash.now[:error] = 'Não foi possível cadastrar. \
 Todos os campos devem ser preenchidos'
       render :new
     end
