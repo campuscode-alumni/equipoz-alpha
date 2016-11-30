@@ -21,6 +21,7 @@ class ContractsController < ApplicationController
 
   def index
     @contracts = Contract.all
+    @equipment = Equipment.all
   end
 
   private

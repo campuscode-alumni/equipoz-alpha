@@ -6,7 +6,6 @@
   <%= f.input :discount, label: 'Desconto: ' %>
   <%= f.association :equipment, as: :check_boxes, label_method: :full_description, collection: Equipment.all, label: 'Equipamentos: ' %>
   <%= f.input :contact, label: 'Responsável: ' %>
-  <%= f.input :number, label: 'Número de Contrato' %>
   <%= f.submit 'Emitir Contrato' %>
 <% end %>
 
