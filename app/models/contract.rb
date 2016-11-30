@@ -17,12 +17,12 @@ class Contract < ApplicationRecord
             presence: true
 
   def set_total_amount
-    amount = 0
+    self.amount = 0
     equipment.each do |equipment|
       current_price = CategoryPrice.where(rental_period: rental_period,
                                   category: equipment.category).last
-      amount += current_price.price if current_price
+      self.amount += current_price.price if current_price
     end
-     total_amount = amount - discount
+    self.total_amount = amount - discount
   end
 end
