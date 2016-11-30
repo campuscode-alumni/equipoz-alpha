@@ -9,7 +9,7 @@ class CategoryPricesController < ApplicationController
     if @category_price.save
       redirect_to @category_price
     else
-      flash.now[:error] = "Não foi possível cadastrar preço"
+      flash.now[:error] = 'Não foi possível cadastrar preço'
       render :new
     end
   end

@@ -20,7 +20,7 @@ class Contract < ApplicationRecord
     self.amount = 0
     equipment.each do |equipment|
       current_price = CategoryPrice.where(rental_period: rental_period,
-                                  category: equipment.category).last
+                                          category: equipment.category).last
       self.amount += current_price.price if current_price
     end
     self.total_amount = amount - discount

@@ -8,8 +8,8 @@ feature 'user create price per category' do
 
     click_on 'Tabela de Preço'
 
-    select(category.name, :from => 'Categorias')
-    select("15", :from => 'Prazo')
+    select(category.name, from: 'Categorias')
+    select('15', from: 'Prazo')
     fill_in('Preço', with: '10')
 
     click_on 'Cadastrar'
@@ -25,8 +25,8 @@ feature 'user create price per category' do
     category = create(:category, name: 'Betoneira')
 
     visit new_category_price_path
-    select(category.name, :from => 'Categorias')
-    select("15", :from => 'Prazo')
+    select(category.name, from: 'Categorias')
+    select('15', from: 'Prazo')
     fill_in('Preço', with: '')
 
     click_on 'Cadastrar'
