@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129220628) do
+ActiveRecord::Schema.define(version: 20161129233300) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20161129220628) do
     t.string   "number"
     t.float    "discount"
     t.float    "total_amount"
+    t.float    "amount"
     t.index ["customer_id"], name: "index_contracts_on_customer_id"
   end
 
