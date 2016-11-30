@@ -22,5 +22,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.required(:category).permit(:name)
   end
-
 end

@@ -8,7 +8,6 @@ feature 'User visit customers index' do
 
     expect(page).to have_link 'Novo Cliente', href: new_customer_path
     expect(page).to have_link 'Visualizar', href: customer_path(customer)
-
   end
   scenario 'and view customers data' do
     customer = create(:customer)
@@ -24,7 +23,6 @@ feature 'User visit customers index' do
   end
 
   scenario 'and do not view customers data' do
-
     customer = create(:customer)
 
     visit customers_path
