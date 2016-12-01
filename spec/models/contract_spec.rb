@@ -10,10 +10,14 @@ RSpec.describe Contract, type: :model do
                              contact: 'Moacir Otranto')
   end
 
-  context 'calculate total contratc ' do
+  context 'calculate total contract' do
     it '#total_contract' do
       total_contract = @contract.amount - @contract.discount
       expect(@contract.total_amount).to be total_contract
     end
+  end
+
+  context 'equipment unavailable to be rented' do
+    
   end
 end

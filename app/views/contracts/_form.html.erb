@@ -6,11 +6,8 @@
   <%= f.input :discount, label: 'Desconto: ' %>
 
   <%= f.input :contact, label: 'Responsável: ' %>
-  <%= f.submit 'Emitir Contrato' %>
+  <%= f.submit 'Emitir Contrato', class:"btn btn-primary" %>
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Voltar', root_path%>
+  </button>
 <% end %>
-
-<div class="btn btn-primary">
-
-  <%= link_to 'Voltar', root_path, :class => "btn" %>
-
-</div>
